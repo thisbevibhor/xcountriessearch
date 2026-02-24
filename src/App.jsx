@@ -24,6 +24,7 @@ function App() {
         setLoading(false);
       })
       .catch((err) => {
+        console.error(err);
         setError(err.message);
         setLoading(false);
       });
@@ -68,7 +69,7 @@ function App() {
         {!loading && !error && (
           <div className="grid">
             {filtered.map((country) => (
-              <div className="card" key={country.common}>
+              <div className="countryCard" key={country.common}>
                 <div className="flag-wrapper">
                   <img
                     src={country.png}
